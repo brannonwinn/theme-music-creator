@@ -109,7 +109,9 @@ class AgentNode(Node, ABC):
     class OutputType(BaseModel):
         pass
 
-    def __init__(self):
+    def __init__(self, task_context: TaskContext = None):
+        super().__init__(task_context=task_context)
+
         self.__async_client = AsyncClient()
         agent_wrapper = self.get_agent_config()
         self.agent = Agent(

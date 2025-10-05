@@ -1,4 +1,7 @@
 from abc import ABC, abstractmethod
+from typing import Type, Optional
+
+from pydantic import BaseModel
 
 from core.task import TaskContext
 
@@ -12,21 +15,17 @@ sequentially and pass results to the next node in the chain.
 
 
 class Node(ABC):
-    """Abstract base class for all workflow processing nodes.
+    class OutputType(BaseModel):
+        pass
 
-    Node implements the Chain of Responsibility pattern, serving as the base
-    handler for all workflow processing steps. Each concrete node implementation
-    represents a specific processing step in the workflow chain.
+    def __init__(self, task_context: TaskContext = None):
+        self.task_context = task_context
 
-    The Chain of Responsibility pattern is implemented through the process()
-    method, which each node uses to:
-    1. Receive the task context from the previous node
-    2. Perform its specific processing
-    3. Pass the updated context to the next node
+    def set_output(self, output: BaseModel):
+        self.task_context.nodes[self.node_name] = output
 
-    Attributes:
-        node_name: Auto-generated name based on the class name
-    """
+    def get_output(self, node_class: Type["Node"]) -> Optional[OutputType]:
+        return self.task_context.nodes.get(node_class.__name__, None)
 
     @property
     def node_name(self) -> str:
