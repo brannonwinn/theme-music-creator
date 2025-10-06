@@ -62,7 +62,7 @@ class RouterNode(ABC):
     def node_name(self):
         return self.__class__.__name__
 
-    def set_output(self, output: BaseModel):
+    def save_output(self, output: BaseModel):
         self.task_context.nodes[self.node_name] = output
 
     def get_output(self, node_class: Type[Node]):

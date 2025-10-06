@@ -16,15 +16,45 @@ sequentially and pass results to the next node in the chain.
 
 class Node(ABC):
     class OutputType(BaseModel):
+        """
+        OutputType class for representing structured outputs for Nodes.
+        """
         pass
 
     def __init__(self, task_context: TaskContext = None):
+        """
+        The constructor is used to initialize the class with a provided TaskContext
+        instance or without any context.
+
+        Parameters:
+        task_context (TaskContext, optional): Context associated with the task.
+            Defaults to None.
+        """
         self.task_context = task_context
 
-    def set_output(self, output: BaseModel):
+    def save_output(self, output: BaseModel):
+        """
+        Saves the output of a task node into the task context, associating it with the
+        node's name for future reference.
+
+        Args:
+            output (BaseModel): The model instance representing the result of the task
+            to be stored in the task_context.
+        """
         self.task_context.nodes[self.node_name] = output
 
     def get_output(self, node_class: Type["Node"]) -> Optional[OutputType]:
+        """
+        Retrieves the output associated with a specific node class from the task context.
+
+        Parameters:
+        node_class: Type[Node]
+            The class of the node whose output is to be retrieved.
+
+        Returns:
+        Optional[OutputType]
+            The output associated with the specified node class if it exists, otherwise None.
+        """
         return self.task_context.nodes.get(node_class.__name__, None)
 
     @property
@@ -53,6 +83,6 @@ class Node(ABC):
         Note:
             Implementations should:
             1. Process the task according to their specific responsibility
-            2. Store results in task_context.nodes[self.node_name]
+            2. Store results using the save_output method
         """
         pass
