@@ -20,7 +20,8 @@ class ConcurrentNode(Node, ABC):
     async def execute_nodes_concurrently(self, task_context: TaskContext):
         node_config: NodeConfig = task_context.metadata["nodes"][self.__class__]
         coroutines = [
-            node().process(task_context) for node in node_config.concurrent_nodes
+            node(task_context).process(task_context)
+            for node in node_config.concurrent_nodes
         ]
         return await asyncio.gather(*coroutines)
 
