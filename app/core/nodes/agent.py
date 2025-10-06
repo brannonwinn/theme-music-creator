@@ -18,7 +18,7 @@ from pydantic_ai.models.bedrock import BedrockConverseModel, BedrockModelName
 from pydantic_ai.models.gemini import GeminiModelName
 from pydantic_ai.models.google import GoogleModel
 from pydantic_ai.models.instrumented import InstrumentationSettings
-from pydantic_ai.models.openai import OpenAIModel, OpenAIModelName, OpenAIChatModel
+from pydantic_ai.models.openai import OpenAIModelName, OpenAIChatModel
 from pydantic_ai.providers.anthropic import AnthropicProvider
 from pydantic_ai.providers.bedrock import BedrockProvider
 from pydantic_ai.providers.google import GoogleProvider
