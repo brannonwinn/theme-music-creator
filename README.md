@@ -52,7 +52,7 @@ All services are containerized using Docker, ensuring consistency across develop
 ## 📚 Documentation
 
 The docs can be found at:
-https://launchpad-docs.datalumina.com/
+https://launchpad.datalumina.com/
 
 ## 🏗️ Project Structure
 

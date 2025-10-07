@@ -10,7 +10,7 @@ dependencies = [
     "instructor>=1.8.3",
     "psycopg2-binary>=2.9.10",
     "pydantic>=2.11.7",
-    "pydantic-ai>=0.7.5",
+    "pydantic-ai>=1.0.15",
     "python-dotenv>=1.1.1",
     "python-frontmatter>=1.1.0",
     "redis>=6.4.0",
@@ -29,9 +29,3 @@ dev = [
 
 [tool.ruff]
 exclude = [".venv", "app/core/commands", "app/alembic", ".sh"]
-
-[project.scripts]
-createworkflow = "app.core.commands.init_workflow:main"
-
-[tool.setuptools]
-packages = ["app"]

@@ -18,7 +18,7 @@ from pydantic_ai.models.bedrock import BedrockConverseModel, BedrockModelName
 from pydantic_ai.models.gemini import GeminiModelName
 from pydantic_ai.models.google import GoogleModel
 from pydantic_ai.models.instrumented import InstrumentationSettings
-from pydantic_ai.models.openai import OpenAIModel, OpenAIModelName
+from pydantic_ai.models.openai import OpenAIModelName, OpenAIChatModel
 from pydantic_ai.providers.anthropic import AnthropicProvider
 from pydantic_ai.providers.bedrock import BedrockProvider
 from pydantic_ai.providers.google import GoogleProvider
@@ -109,7 +109,9 @@ class AgentNode(Node, ABC):
     class OutputType(BaseModel):
         pass
 
-    def __init__(self):
+    def __init__(self, task_context: TaskContext = None):
+        super().__init__(task_context=task_context)
+
         self.__async_client = AsyncClient()
         agent_wrapper = self.get_agent_config()
         self.agent = Agent(
@@ -154,14 +156,14 @@ class AgentNode(Node, ABC):
             case provider.GOOGLE_VERTEX_AI.value:
                 return self.__get_google_vertex_ai_model(model_name)
 
-    def __get_openai_model(self, model_name: OpenAIModelName) -> Model:
-        return OpenAIModel(model_name=model_name)
+    def __get_openai_model(self, model_name) -> Model:
+        return OpenAIChatModel(model_name=model_name)
 
     def __get_azure_openai_model(self, model_name) -> Model:
         client = AsyncAzureOpenAI(
             api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2024-10-21")
         )
-        return OpenAIModel(
+        return OpenAIChatModel(
             model_name=model_name,
             provider=OpenAIProvider(openai_client=client),
         )
@@ -177,7 +179,7 @@ class AgentNode(Node, ABC):
         if not base_url:
             raise KeyError("OLLAMA_BASE_URL not set in .env")
 
-        return OpenAIModel(
+        return OpenAIChatModel(
             model_name=model_name, provider=OpenAIProvider(base_url=base_url)
         )
 

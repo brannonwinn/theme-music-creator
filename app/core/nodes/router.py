@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import Optional
+from typing import Optional, Type
+
+from pydantic import BaseModel
 
 from core.task import TaskContext
 from core.nodes.base import Node
@@ -41,6 +43,7 @@ class BaseRouter(Node):
             The next node to execute, or None if no route is found
         """
         for route_node in self.routes:
+            route_node.task_context = task_context
             next_node = route_node.determine_next_node(task_context)
             if next_node:
                 return next_node
@@ -48,6 +51,9 @@ class BaseRouter(Node):
 
 
 class RouterNode(ABC):
+    def __init__(self, task_context: TaskContext = None):
+        self.task_context = task_context
+
     @abstractmethod
     def determine_next_node(self, task_context: TaskContext) -> Optional[Node]:
         pass
@@ -55,3 +61,9 @@ class RouterNode(ABC):
     @property
     def node_name(self):
         return self.__class__.__name__
+
+    def save_output(self, output: BaseModel):
+        self.task_context.nodes[self.node_name] = output
+
+    def get_output(self, node_class: Type[Node]):
+        return self.task_context.nodes.get(node_class.__name__, None)
