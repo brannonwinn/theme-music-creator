@@ -1,0 +1,158 @@
+services:
+  db-init:
+    image: postgres:15
+    container_name: "${PROJECT_NAME}_db_init"
+    networks:
+      - supabase_shared_network
+    environment:
+      - PGPASSWORD=${POSTGRES_PASSWORD}
+    entrypoint: >
+      /bin/sh -c "
+      echo 'Waiting for Supabase database...';
+      until pg_isready -h ${POSTGRES_HOST} -p ${POSTGRES_PORT} -U postgres; do
+        echo 'Database not ready, waiting...';
+        sleep 2;
+      done;
+      echo 'Database is ready!';
+      echo 'Checking if database ${POSTGRES_DB} exists...';
+      DB_EXISTS=$$(psql -h ${POSTGRES_HOST} -p ${POSTGRES_PORT} -U postgres -tAc \"SELECT 1 FROM pg_database WHERE datname='${POSTGRES_DB}'\");
+      if [ \"$$DB_EXISTS\" = \"1\" ]; then
+        echo 'Database ${POSTGRES_DB} already exists';
+      else
+        echo 'Creating database ${POSTGRES_DB}...';
+        psql -h ${POSTGRES_HOST} -p ${POSTGRES_PORT} -U postgres -c 'CREATE DATABASE ${POSTGRES_DB};';
+        echo 'Database ${POSTGRES_DB} created successfully';
+      fi;
+      echo 'Database initialization complete';
+      "
+    restart: "no"
+
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.api
+    container_name: "${PROJECT_NAME}_api"
+    depends_on:
+      db-init:
+        condition: service_completed_successfully
+    networks:
+      - default
+      - supabase_shared_network
+    ports:
+      - "127.0.0.1:6789:8080"
+    restart: always
+    volumes:
+      - ./../app/:/app
+    environment:
+      - PROJECT_NAME=${PROJECT_NAME}
+      - REDIS_URL=redis://supabase-shared-redis:6379/0
+      - DATABASE_HOST=${POSTGRES_HOST}
+      - DATABASE_NAME=${POSTGRES_DB}
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+      - DATABASE_PORT=${POSTGRES_PORT}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+      - OPENAI_API_VERSION=${OPENAI_API_VERSION}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}
+      - BEDROCK_AWS_ACCESS_KEY_ID=${BEDROCK_AWS_ACCESS_KEY_ID}
+      - BEDROCK_AWS_SECRET_ACCESS_KEY=${BEDROCK_AWS_SECRET_ACCESS_KEY}
+      - BEDROCK_AWS_REGION=${BEDROCK_AWS_REGION}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
+      - GOOGLE_VERTEX_AI_LOCATION=${GOOGLE_VERTEX_AI_LOCATION}
+
+  celery_worker:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.celery
+    container_name: "${PROJECT_NAME}_celery_worker"
+    depends_on:
+      db-init:
+        condition: service_completed_successfully
+      api:
+        condition: service_started
+    networks:
+      - default
+      - supabase_shared_network
+    restart: always
+    volumes:
+      - ./../app:/app
+    environment:
+      - PROJECT_NAME=${PROJECT_NAME}
+      - REDIS_URL=redis://supabase-shared-redis:6379/0
+      - DATABASE_HOST=${POSTGRES_HOST}
+      - DATABASE_NAME=${POSTGRES_DB}
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+      - DATABASE_PORT=${POSTGRES_PORT}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+      - OPENAI_API_VERSION=${OPENAI_API_VERSION}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}
+      - BEDROCK_AWS_ACCESS_KEY_ID=${BEDROCK_AWS_ACCESS_KEY_ID}
+      - BEDROCK_AWS_SECRET_ACCESS_KEY=${BEDROCK_AWS_SECRET_ACCESS_KEY}
+      - BEDROCK_AWS_REGION=${BEDROCK_AWS_REGION}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
+      - GOOGLE_VERTEX_AI_LOCATION=${GOOGLE_VERTEX_AI_LOCATION}
+
+  #  caddy:
+  #    container_name: "${PROJECT_NAME}_caddy"
+  #    env_file:
+  #      - ./.env
+  #    image: caddy:latest
+  #    ports:
+  #      - "80:80"
+  #      - "127.0.0.1:2019:2019"
+  #      - "443:443"
+  #    restart: always
+  #    volumes:
+  #      - ./Caddyfile:/etc/caddy/Caddyfile
+  #      - /var/log/caddy:/var/log/caddy
+  #      - caddy_config:/config
+  #      - caddy_data:/data
+
+  # redis service removed - using shared supabase-shared-redis on port 6380 instead
+  # See: ~/Documents/Personal/WinnGlobal/Dev/Projects/docker-infrastructure/supabase/
+  #
+  # redis:
+  #   container_name: "${PROJECT_NAME}_redis"
+  #   healthcheck:
+  #     interval: 30s
+  #     retries: 5
+  #     test:
+  #       - CMD
+  #       - redis-cli
+  #       - ping
+  #     timeout: 10s
+  #   image: redis:latest
+  #   ports:
+  #     - "127.0.0.1:6380:6379"
+  #   restart: always
+  #   volumes:
+  #     - redis_data:/data
+
+  # db service removed - using shared standalone Supabase instead
+  # See: ~/Documents/Personal/WinnGlobal/Dev/Projects/docker-infrastructure/supabase/
+  #
+  # db:
+  #   container_name: supabase-db
+  #   ... (commented out)
+
+volumes:
+  caddy_config:
+  caddy_data:
+  # db_config, db_data, and redis_data removed - using shared infrastructure
+
+networks:
+  default:
+    driver: bridge
+    external: true
+    name: "${PROJECT_NAME}_network"
+  supabase_shared_network:
+    external: true

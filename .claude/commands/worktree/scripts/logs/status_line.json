@@ -1,0 +1,886 @@
+[
+  {
+    "timestamp": "2025-11-24T23:08:14.222557",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.1584326,
+        "total_duration_ms": 24964146,
+        "total_api_duration_ms": 889924,
+        "total_lines_added": 265,
+        "total_lines_removed": 339
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:28.289568",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.1584326,
+        "total_duration_ms": 24978224,
+        "total_api_duration_ms": 889924,
+        "total_lines_added": 265,
+        "total_lines_removed": 339
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:28.290369",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.1584326,
+        "total_duration_ms": 24978224,
+        "total_api_duration_ms": 889924,
+        "total_lines_added": 265,
+        "total_lines_removed": 339
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:35.157469",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.20522465,
+        "total_duration_ms": 24985127,
+        "total_api_duration_ms": 902692,
+        "total_lines_added": 265,
+        "total_lines_removed": 339
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:35.158487",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.20522465,
+        "total_duration_ms": 24985127,
+        "total_api_duration_ms": 902692,
+        "total_lines_added": 265,
+        "total_lines_removed": 339
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:50.355306",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.20522465,
+        "total_duration_ms": 25000344,
+        "total_api_duration_ms": 902692,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:50.355916",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.20522465,
+        "total_duration_ms": 25000344,
+        "total_api_duration_ms": 902692,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:50.565965",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.20522465,
+        "total_duration_ms": 25000566,
+        "total_api_duration_ms": 902692,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:50.566442",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.20522465,
+        "total_duration_ms": 25000566,
+        "total_api_duration_ms": 902692,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:51.215790",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.24721655,
+        "total_duration_ms": 25001202,
+        "total_api_duration_ms": 908002,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:51.216871",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.24721655,
+        "total_duration_ms": 25001202,
+        "total_api_duration_ms": 908002,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:51.226251",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.24721655,
+        "total_duration_ms": 25001210,
+        "total_api_duration_ms": 908002,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:08:51.229760",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.24721655,
+        "total_duration_ms": 25001210,
+        "total_api_duration_ms": 908002,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:06.104334",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.24721655,
+        "total_duration_ms": 25016020,
+        "total_api_duration_ms": 908002,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:06.106060",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.24721655,
+        "total_duration_ms": 25016020,
+        "total_api_duration_ms": 908002,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:06.522191",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.24721655,
+        "total_duration_ms": 25016497,
+        "total_api_duration_ms": 908002,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:06.522924",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.24721655,
+        "total_duration_ms": 25016497,
+        "total_api_duration_ms": 908002,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:14.452360",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.3027782,
+        "total_duration_ms": 25024439,
+        "total_api_duration_ms": 922884,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:14.453733",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.3027782,
+        "total_duration_ms": 25024439,
+        "total_api_duration_ms": 922884,
+        "total_lines_added": 283,
+        "total_lines_removed": 349
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:35.325300",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.3027782,
+        "total_duration_ms": 25045309,
+        "total_api_duration_ms": 922884,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:35.326149",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.3027782,
+        "total_duration_ms": 25045309,
+        "total_api_duration_ms": 922884,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:35.909136",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.3473513,
+        "total_duration_ms": 25045922,
+        "total_api_duration_ms": 927979,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:35.910041",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.3473513,
+        "total_duration_ms": 25045922,
+        "total_api_duration_ms": 927979,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:56.324051",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.387089899999999,
+        "total_duration_ms": 25066300,
+        "total_api_duration_ms": 934234,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:09:56.324926",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.387089899999999,
+        "total_duration_ms": 25066300,
+        "total_api_duration_ms": 934234,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:10:05.627557",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.387089899999999,
+        "total_duration_ms": 25075584,
+        "total_api_duration_ms": 934234,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:10:05.629036",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.387089899999999,
+        "total_duration_ms": 25075584,
+        "total_api_duration_ms": 934234,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  },
+  {
+    "timestamp": "2025-11-24T23:10:06.211572",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.4274393,
+        "total_duration_ms": 25076183,
+        "total_api_duration_ms": 939769,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "[Sonnet 4.5] \ud83d\udcad No session data",
+    "error": "Session file .claude/data/sessions/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.json does not exist"
+  },
+  {
+    "timestamp": "2025-11-24T23:10:06.213029",
+    "version": "v4",
+    "input_data": {
+      "session_id": "1b3465fc-b251-46c3-a4bc-85fe94fcb1d7",
+      "transcript_path": "/Users/brannonwinn/.claude/projects/-Users-brannonwinn-Documents-Personal-WinnGlobal-Dev-Projects-host-hero-v2/1b3465fc-b251-46c3-a4bc-85fe94fcb1d7.jsonl",
+      "cwd": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+      "model": {
+        "id": "claude-sonnet-4-5-20250929",
+        "display_name": "Sonnet 4.5"
+      },
+      "workspace": {
+        "current_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2/.claude/commands/worktree/scripts",
+        "project_dir": "/Users/brannonwinn/Documents/Personal/WinnGlobal/Dev/Projects/host_hero_v2"
+      },
+      "version": "2.0.28",
+      "output_style": {
+        "name": "default"
+      },
+      "cost": {
+        "total_cost_usd": 4.4274393,
+        "total_duration_ms": 25076183,
+        "total_api_duration_ms": 939769,
+        "total_lines_added": 289,
+        "total_lines_removed": 352
+      },
+      "exceeds_200k_tokens": false
+    },
+    "status_line_output": "\u001b[36m[Sonnet 4.5]\u001b[0m \u001b[90m\ud83d\udcad No session data\u001b[0m"
+  }
+]

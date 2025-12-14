@@ -1,0 +1,61 @@
+# Docker Compose - Celery Worker Only (Worktree)
+# Generated from template for: ${AGENT_COLOR} worktree
+#
+# This file is auto-generated during worktree creation.
+# Do not edit manually - changes will be overwritten.
+#
+# Template location: docker/docker-compose.celery.yml.template
+
+name: "${PROJECT_NAME}_${AGENT_COLOR}"
+
+services:
+  celery_worker:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.celery
+    container_name: "${PROJECT_NAME}_celery_${AGENT_COLOR}"
+    networks:
+      - default
+      - supabase_shared_network
+    restart: unless-stopped
+    volumes:
+      - ../app:/app
+    environment:
+      # Project identification
+      - PROJECT_NAME=${PROJECT_NAME}
+
+      # Database connection (worktree-specific)
+      - DATABASE_HOST=${POSTGRES_HOST}
+      - DATABASE_NAME=${POSTGRES_DB}
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=${POSTGRES_PASSWORD}
+      - DATABASE_PORT=${POSTGRES_PORT}
+
+      # Redis connection (shared infrastructure - container name)
+      # Celery runs in Docker, so it connects to Redis container, not localhost
+      - REDIS_URL=redis://supabase-shared-redis:6379/0
+
+      # LLM API Keys (inherited from main project)
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
+      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
+      - OPENAI_API_VERSION=${OPENAI_API_VERSION}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL}
+      - BEDROCK_AWS_ACCESS_KEY_ID=${BEDROCK_AWS_ACCESS_KEY_ID}
+      - BEDROCK_AWS_SECRET_ACCESS_KEY=${BEDROCK_AWS_SECRET_ACCESS_KEY}
+      - BEDROCK_AWS_REGION=${BEDROCK_AWS_REGION}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
+      - GOOGLE_VERTEX_AI_LOCATION=${GOOGLE_VERTEX_AI_LOCATION}
+
+networks:
+  # Join main project network for inter-service communication
+  default:
+    driver: bridge
+    external: true
+    name: "${DOCKER_NETWORK}"
+
+  # Join shared Supabase network for database/redis access
+  supabase_shared_network:
+    external: true

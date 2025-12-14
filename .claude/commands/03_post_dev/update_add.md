@@ -27,14 +27,14 @@ $ARGUMENTS
 2. **Analyze Dependencies**
 
    ```bash
-   # Check for new architectural dependencies
-   grep -E "redis|kafka|rabbitmq|celery|fastapi|django" requirements.txt
-   
+   # Check for new architectural dependencies (backend uses pyproject.toml with uv)
+   grep -E "redis|kafka|rabbitmq|celery|fastapi|django" backend/pyproject.toml
+
    # Database technologies
-   grep -E "sqlalchemy|pymongo|psycopg|redis" requirements.txt
-   
+   grep -E "sqlalchemy|pymongo|psycopg|redis" backend/pyproject.toml
+
    # External service integrations
-   grep -E "boto3|stripe|twilio|sendgrid" requirements.txt
+   grep -E "boto3|stripe|twilio|sendgrid" backend/pyproject.toml
    ```
 
 3. **Detect Design Patterns**
@@ -128,7 +128,7 @@ if new_services:
 ### Technology Stack Changes
 | Component | Original | Current | Reason |
 |-----------|----------|---------|---------|
-| Cache | None | Redis | Found in requirements.txt, used in user_service.py:45 |
+| Cache | None | Redis | Found in pyproject.toml, used in user_service.py:45 |
 | Queue | None | Celery | Found worker definitions in app/tasks/ |
 | Auth | JWT local | Auth0 | OAuth configuration in config.py |
 

@@ -1,0 +1,65 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.8"
+# ///
+
+"""
+Constants for Claude Code Hooks.
+"""
+
+import os
+import subprocess
+from pathlib import Path
+
+
+def get_git_root():
+    """
+    Get the git repository root directory.
+    Falls back to current directory if not in a git repo.
+    """
+    try:
+        result = subprocess.run(
+            ['git', 'rev-parse', '--show-toplevel'],
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        if result.returncode == 0:
+            return Path(result.stdout.strip())
+    except Exception:
+        pass
+    return Path.cwd()
+
+
+# Project root directory - use CLAUDE_PROJECT_ROOT env var or git root
+PROJECT_ROOT = Path(os.environ.get("CLAUDE_PROJECT_ROOT", "")) if os.environ.get("CLAUDE_PROJECT_ROOT") else get_git_root()
+
+# Base directory for all logs
+# Default is 'logs' relative to project root
+LOG_BASE_DIR = os.environ.get("CLAUDE_HOOKS_LOG_DIR", str(PROJECT_ROOT / "logs"))
+
+def get_session_log_dir(session_id: str) -> Path:
+    """
+    Get the log directory for a specific session.
+
+    Args:
+        session_id: The Claude session ID
+
+    Returns:
+        Path object for the session's log directory
+    """
+    return Path(LOG_BASE_DIR) / session_id
+
+def ensure_session_log_dir(session_id: str) -> Path:
+    """
+    Ensure the log directory for a session exists.
+
+    Args:
+        session_id: The Claude session ID
+
+    Returns:
+        Path object for the session's log directory
+    """
+    log_dir = get_session_log_dir(session_id)
+    log_dir.mkdir(parents=True, exist_ok=True)
+    return log_dir

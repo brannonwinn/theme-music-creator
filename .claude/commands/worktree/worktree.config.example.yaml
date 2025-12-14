@@ -1,0 +1,43 @@
+# Minimal Worktree Configuration Example
+# Copy this to worktree.config.yaml and customize
+
+version: "2.0"
+
+project:
+  name: my_project  # Change to your project name
+  docker_env_path: backend/docker/.env  # Path to Docker environment file (optional)
+
+database:
+  provider: supabase
+  isolation_strategy: separate_databases
+
+agents:
+  - name: blue
+    display_name: Blue Guardian
+    backend_port: 6799
+    frontend_port: 3010
+    database_name: my_project_blue
+    test_user:
+      email: blue-dev@test.com
+      password: test-blue
+
+  - name: red
+    display_name: Red Sentinel
+    backend_port: 6809
+    frontend_port: 3020
+    database_name: my_project_red
+    test_user:
+      email: red-dev@test.com
+      password: test-red
+
+  - name: white
+    display_name: White Oracle
+    backend_port: 6819
+    frontend_port: 3030
+    database_name: my_project_white
+    test_user:
+      email: white-dev@test.com
+      password: test-white
+
+features:
+  celery_enabled: true  # Set to false if project doesn't use Celery

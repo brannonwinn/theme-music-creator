@@ -1,0 +1,300 @@
+# Worktree System Configuration
+# Version: 2.0
+# Documentation: See PORTABILITY.md and README.md
+
+version: "2.0"
+
+# ============================================================================
+# PROJECT CONFIGURATION
+# ============================================================================
+project:
+  # Project name (used in database names, paths, etc.)
+  # Default: Current directory name
+  name: host_hero
+
+  # Path to backend PROJECT root directory (where pyproject.toml/requirements.txt is)
+  # Used for: Dependency installation (uv sync, pip install)
+  # Default: auto-detected (looks for pyproject.toml, requirements.txt)
+  # Common values: "backend", "server", "api", "." (if pyproject.toml is in root)
+  backend_project_dir: backend
+
+  # Path to backend APP directory (where main.py/FastAPI app is)
+  # Used for: Starting services (uvicorn main:app)
+  # Default: auto-detected or same as backend_project_dir
+  # Common values: "backend/app", "app", "backend/src", "src"
+  backend_app_dir: backend/app
+
+  # Path to frontend directory from project root
+  # Default: auto-detected (looks for package.json)
+  # Common values: "frontend", "client", "web", "ui"
+  # Set to null if no frontend
+  frontend_dir: frontend
+
+  # Path to Docker environment file from project root
+  # Used for Celery worker configuration and other Docker services
+  # Common values: "docker/.env", "backend/docker/.env", ".env"
+  docker_env_path: backend/docker/.env
+
+  # Path to AI documentation directory (contains reviews, context, plans)
+  # Used for: Review documents, AI context files, planning docs
+  # Default: auto-detected (looks for ai_docs in backend/, then root)
+  # Common values: "backend/ai_docs", "ai_docs", "docs/ai"
+  ai_docs_dir: backend/ai_docs
+
+# ============================================================================
+# INFRASTRUCTURE CONFIGURATION
+# ============================================================================
+infrastructure:
+  # Observability API endpoint (centralized event tracking server)
+  observability_api_url: http://localhost:6789/hooks/events/
+
+  # Redis Service (shared Redis instance)
+  # Shared Supabase Redis on port 6380, database 0
+  redis_url: redis://localhost:6380/0
+
+  # Docker network for inter-service communication
+  # Default: auto-detected (tries {project_name}_network, {project_name}network)
+  # Set explicitly if your project uses a custom network name
+  # Leave commented for auto-detection
+  docker_network: hosthero_network
+
+# ============================================================================
+# DATABASE CONFIGURATION
+# ============================================================================
+database:
+  # Database provider
+  # Supported: "supabase", "postgres", "mysql"
+  provider: supabase
+
+  # Supabase setup type
+  # - "shared": Multi-project Supabase (e.g., supabase-shared-db)
+  # - "standalone": Project-specific Supabase (e.g., supabase-db)
+  # Default: auto-detected based on container name
+  setup_type: standalone
+
+  # Database isolation strategy
+  # - "separate_databases": Each worktree gets its own database (RECOMMENDED)
+  #   - Pros: True isolation, multi-org testing, realistic scenarios
+  #   - Cons: No FK to auth.users (must handle in app code)
+  #   - Best for: Multi-org SaaS, apps needing complete data isolation
+  #
+  # - "rls": All worktrees share one database, isolated by RLS policies
+  #   - Pros: Simple setup, FK constraints work, no schema replication
+  #   - Cons: Shared migrations, requires RLS in app
+  #   - Best for: Single-org apps, apps already using RLS
+  isolation_strategy: separate_databases
+
+  # Database container name (Docker)
+  # Default: auto-detected (tries supabase-shared-db, supabase-db, {project}_supabase-db)
+  # Set explicitly if auto-detection fails
+  container_name: supabase-db
+
+  # Database connection details
+  # Default: Standard Supabase ports
+  host: localhost
+  port: 5432
+  user: postgres
+
+# ============================================================================
+# AGENT CONFIGURATION
+# ============================================================================
+# Define worktrees (agents) for parallel development
+# Each agent gets:
+# - Separate git worktree directory
+# - Unique ports (backend, frontend)
+# - Isolated database (or test org if using RLS)
+# - Pre-seeded test data
+
+agents:
+  # Blue Agent (Primary worktree)
+  - name: blue
+    display_name: Blue Guardian
+
+    # Backend port (FastAPI, Flask, etc.)
+    backend_port: 6799
+
+    # Frontend port (Next.js, React, etc.)
+    frontend_port: 3010
+
+    # Chrome DevTools debugging port (for UI testing)
+    chrome_debug_port: 9226
+
+    # Database configuration
+    # For separate_databases strategy:
+    database_name: host_hero_blue
+
+    # Test user credentials (auto-created on worktree setup)
+    test_user:
+      email: blue-dev@test.com
+      password: test-password-blue
+      role: owner  # Role in test organizations
+
+  # Red Agent (Secondary worktree)
+  - name: red
+    display_name: Red Sentinel
+    backend_port: 6809
+    frontend_port: 3020
+    chrome_debug_port: 9223
+    database_name: host_hero_red
+    test_user:
+      email: red-dev@test.com
+      password: test-password-red
+      role: owner
+
+  # White Agent (Tertiary worktree)
+  - name: white
+    display_name: White Oracle
+    backend_port: 6819
+    frontend_port: 3030
+    chrome_debug_port: 9224
+    database_name: host_hero_white
+    test_user:
+      email: white-dev@test.com
+      password: test-password-white
+      role: owner
+
+  # -------------------------------------------------------------------------
+  # ADD MORE AGENTS AS NEEDED (no code changes required!)
+  # -------------------------------------------------------------------------
+  # Example: 4th agent
+  - name: green
+    display_name: Green Protector
+    backend_port: 6829
+    frontend_port: 3040
+    chrome_debug_port: 9225
+    database_name: host_hero_green
+    test_user:
+      email: green-dev@test.com
+      password: test-password-green
+      role: owner
+
+  # Example: 5th agent with custom name
+  # - name: alpha
+  #   display_name: Alpha Prime
+  #   backend_port: 8000
+  #   frontend_port: 4000
+  #   database_name: agent_observer_alpha
+  #   test_user:
+  #     email: alpha-dev@test.com
+  #     password: test-password-alpha
+  #     role: owner
+
+# ============================================================================
+# PORT CONFIGURATION
+# ============================================================================
+# Port allocation formula:
+# agent_backend_port = base_backend_port + (agent_index * port_offset)
+# agent_frontend_port = base_frontend_port + (agent_index * port_offset)
+#
+# Note: Explicit ports in agents[] take precedence over calculated ports
+
+port_config:
+  # Base port for main project backend
+  base_backend_port: 8000
+
+  # Base port for main project frontend
+  base_frontend_port: 3000
+
+  # Port increment between agents
+  # Example: blue (0), red (+10), white (+20), green (+30)
+  port_offset: 10
+
+# ============================================================================
+# UI TESTING CONFIGURATION
+# ============================================================================
+# Configuration for parallel UI testing with Chrome DevTools MCP
+# Full test config: backend/ai_docs/epics/testing/hosthero.test.config.yaml
+
+testing:
+  # Path to detailed test configuration (profiles, credentials, test data)
+  config_file: backend/ai_docs/epics/testing/hosthero.test.config.yaml
+
+  # Output directory for test results (relative to project root)
+  results_dir: backend/ai_docs/epics/testing/test_results
+
+  # Chrome user data directory template
+  # Variables: {worktree_name}, {port}
+  chrome_user_data_template: /tmp/hosthero-test-{worktree_name}
+
+  # Default viewport for UI tests
+  default_viewport: desktop
+
+  # Screenshots on test failures
+  screenshot_on_failure: true
+
+# ============================================================================
+# FEATURE FLAGS
+# ============================================================================
+features:
+  # Auto-seed test data on worktree creation
+  # Creates test organizations, users, and sample data
+  auto_seed_data: true
+
+  # Automatically run migrations on worktree sync
+  auto_migrations: true
+
+  # Enable Redis caching for git operations
+  # Requires Redis container running
+  redis_caching: true
+
+  # Send events to observability server
+  # Requires observability API running (separate from worktree system)
+  observability: true
+
+  # Enable Celery worker for async task processing
+  # Set to false if project doesn't use Celery
+  # When enabled, generates docker-compose.celery.yml per worktree
+  celery_enabled: true
+
+# ============================================================================
+# SEED DATA CONFIGURATION (for auto_seed_data)
+# ============================================================================
+# seed_data:
+#   # Number of test organizations to create per worktree
+#   # Only used if app has multi-org architecture
+#   organizations: 3
+
+#   # Organization names template
+#   # Variables: {color}, {index}
+#   org_name_template: "Test Org {name} ({color})"
+#   org_names:
+#     - Alpha Corp
+#     - Beta Inc
+#     - Gamma LLC
+
+#   # Number of test users per organization
+#   # Primary test user (from test_user above) is always created
+#   additional_users_per_org: 0
+
+#   # Sample data per organization
+#   # Customize based on your app's data model
+#   sample_data:
+#     # Example: For property management app
+#     properties_per_org: 3
+#     # Example: For e-commerce app
+#     # products_per_org: 10
+#     # orders_per_org: 5
+
+# ============================================================================
+# NOTES
+# ============================================================================
+# 1. Config Validation:
+#    Run `/worktree:wt_validate` to check this config
+#
+# 2. Adding New Agents:
+#    - Add entry to agents[] array
+#    - Ensure ports don't conflict
+#    - Run `/worktree:wt_create <agent_name>`
+#
+# 3. Database Strategy:
+#    - separate_databases: Best for multi-org apps, realistic testing
+#    - rls: Best for single-org apps, simpler setup (not implemented yet)
+#
+# 4. Backward Compatibility:
+#    - Old worktree_config.json is deprecated but still works
+#    - Run `/worktree:wt_migrate_config` to convert to YAML
+#
+# 5. Documentation:
+#    - Full guide: .claude/commands/worktree/README.md
+#    - Portability: .claude/commands/worktree/PORTABILITY.md
+#    - Database deep dive: ai_docs/plans/worktree_database_auth_deep_dive.md

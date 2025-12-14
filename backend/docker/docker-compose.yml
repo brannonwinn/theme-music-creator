@@ -1,0 +1,10 @@
+include:
+  - path: ./docker-compose.launchpad.yml
+  # Using shared standalone Supabase instead of project-specific instance
+  # - path: ./docker-compose.supabase.yml
+
+networks:
+  default:
+    driver: bridge
+    external: true
+    name: "${PROJECT_NAME}_network"
