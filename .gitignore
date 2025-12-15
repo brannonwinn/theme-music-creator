@@ -1,6 +1,9 @@
 # Claude data
 .claude/data/
 
+# Developer-specific Claude settings (use .env.template as reference)
+.claude/.env
+
 # Logs
 logs/
 

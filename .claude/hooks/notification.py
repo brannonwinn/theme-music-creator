@@ -25,7 +25,9 @@ from utils.redis_client import RedisClient
 
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    # Load .env from .claude directory (developer-specific settings)
+    claude_dir = Path(__file__).parent.parent
+    load_dotenv(claude_dir / ".env")
 except ImportError:
     pass  # dotenv is optional
 
